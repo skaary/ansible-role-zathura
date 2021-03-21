@@ -1,0 +1,7 @@
+---
+- name: ensure zathura is installed
+  apt:
+    name: "{{packages}}"
+    state: present
+  vars:
+    packages: "{{ [zathura_package_name] + zathura_exclusive_packages }}"
