@@ -13,6 +13,11 @@ None
 
 ## Example Playbook
 
+```yaml
+- hosts: all
+  roles:
+    - skaary.docker
+```
 
 ## License
 
