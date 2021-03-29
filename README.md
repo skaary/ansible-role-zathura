@@ -16,7 +16,7 @@ None
 ```yaml
 - hosts: all
   roles:
-    - skaary.docker
+    - skaary.zathura
 ```
 
 ## License
