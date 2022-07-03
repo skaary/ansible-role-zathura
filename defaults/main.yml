@@ -1,0 +1,11 @@
+---
+zathura_package_name: zathura
+zathura_mupdf_backend: true
+
+zathura_exclusive_packages:
+  - zathura-pdf-poppler
+  - zathura-ps
+  - zathura-cb
+  - zathura-djvu
+
+zathura_mupdf_backend_download_url: https://pwmt.org/projects/zathura-pdf-mupdf/download/zathura-pdf-mupdf-0.3.6.tar.xz
