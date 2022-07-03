@@ -1,6 +1,0 @@
----
-zathura_package_name: zathura
-
-zathura_exclusive_packages:
-  - zathura-pdf-poppler
-#  - zathura-ps
