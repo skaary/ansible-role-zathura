@@ -1,0 +1,32 @@
+---
+# https://pwmt.org/projects/zathura-pdf-mupdf/
+
+- name: ensure zathura mupdf backend is installed
+  block:
+    - name: ensure directories exist
+      tempfile:
+        path: "{{ item }}"
+        state: directory
+      with_items:
+        - temp_dir
+        - temp_dir/build
+
+    - name: ensure required packages are installed
+      apt:
+        name: "{{ zathura_mupdf_backend_packages }}"
+        state: present
+      become: true
+
+    - name: download zathura-pdf-mupdf tar
+      unarchive:
+        src: "{{ zathura_mupdf_backend_download_url }}"
+        dest: "{{ zathura_dir }}"
+        remote_src: true
+        extra_opts: [--strip-components=1]
+      register: archive_dir
+      become: true
+
+    - name: meson ninja build zathura-pdf-mupdf
+      command: meson build && cd build && ninja && ninja install
+      args:
+        chdir: temp_dir

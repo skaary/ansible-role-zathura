@@ -5,3 +5,6 @@
     state: present
   vars:
     packages: "{{ [zathura_package_name] + zathura_exclusive_packages }}"
+  become: true
+# - include_tasks: zathura_mupdf_backend
+#   when: zathura_mupdf_backend
