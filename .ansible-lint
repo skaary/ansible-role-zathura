@@ -3,7 +3,7 @@ skip_list:
   - 'yaml'
   - 'risky-shell-pipe'
   # - 'git-latest'
-  # - 'no-changed-when'
+  - 'no-changed-when'
   # - 'literal-compare'
   - 'fqcn-builtins'
 
